@@ -1,8 +1,8 @@
 // COre Module
 // File System
 const fs = require('fs');
-const { rejects } = require('node:assert');
-const { resolve } = require('node:path');
+// const { rejects } = require('node:assert');
+// const { resolve } = require('node:path');
 
 // menuliskan string ke file (syncronous)
 
@@ -74,11 +74,12 @@ const main = async() => {
     const nama = await pertanyaan1();
     const email = await pertanyaan2();
 
-    const contacts = { nama, email};
+    const contact = { nama, email};
     
     const fileBuffer=fs.readFileSync('data/contacts.json', 'utf-8');
 
-    const contact = JSON.parse(fileBuffer);
+    const contacts = JSON.parse(fileBuffer);
+    
     contacts.push(contact);
 
     console.log(contact);
